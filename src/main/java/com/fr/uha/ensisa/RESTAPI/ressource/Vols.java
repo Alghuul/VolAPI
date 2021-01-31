@@ -21,9 +21,9 @@ public class Vols {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getVols()
+	public List<Vol> getVols()
 	{
-		return "hello world";
+		return Connection.getAllVols();
 	}
 	
 	@GET
