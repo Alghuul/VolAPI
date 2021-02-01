@@ -16,6 +16,7 @@ public class Connection {
 	
 	private static EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("RESTAPI");
 
+	
 	public static void addVol(String numVol, String villeDepart, String villeArrivee, int heureDepart) {
 		EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
 		EntityTransaction et = null;
@@ -93,13 +94,16 @@ public class Connection {
 		
 		try {
 			vols = tq.getResultList();
+			//vols.forEach(vol -> System.out.println(vol.getNumVol()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		finally {
+			
 			em.close();
 		}
 		return vols;
+		
 	}
 	
 	public static void putVol(String numVol,int heureDepart) {

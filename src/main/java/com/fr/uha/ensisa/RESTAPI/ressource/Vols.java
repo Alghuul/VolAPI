@@ -3,21 +3,24 @@ package com.fr.uha.ensisa.RESTAPI.ressource;
 
 import java.util.List;
 
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
 import com.fr.uha.ensisa.RESTAPI.database.Connection;
 import com.fr.uha.ensisa.RESTAPI.model.Vol;
 
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
-import jakarta.ws.rs.core.MediaType;
-
-
-@Path("/vols")
+@Path("vols")
 public class Vols {
 
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/test")
+	public String getit()
+	{
+		return "Hello";
+	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
